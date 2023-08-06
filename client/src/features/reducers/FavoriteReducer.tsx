@@ -9,6 +9,17 @@ const initialState: FavoriteState = {
 
 export const favoriteReducer = createReducer(initialState, (builder) => {
   builder.addCase(addFav, (state, action: PayloadAction<MovieTypes[]>) => {
-    state.favorite = action.payload;
+    const newFavoriteMovie = action.payload;
+
+    const existingMovies = state.favorite;
+
+    const updatedFavoriteMovies = newFavoriteMovie.filter(
+      (movie) =>
+        !existingMovies.some(
+          (favMovie) => favMovie.episode_id === movie.episode_id
+        )
+    );
+
+    state.favorite = [...existingMovies, ...updatedFavoriteMovies];
   });
 });

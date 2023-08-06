@@ -1,11 +1,11 @@
-import Navbar from "./common/components/Navbar";
 import AppRouter from "./pages";
 import CommonLayout from "./common/layout";
+import Hero from "./pages/hero";
 
 export default function App() {
   return (
     <>
-      <Navbar />
+      <Hero />
       <CommonLayout>
         <AppRouter />
       </CommonLayout>

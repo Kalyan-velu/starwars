@@ -6,6 +6,7 @@ import { setMovies } from "../../features/actions";
 import { useQuery } from "@apollo/client";
 import { GET_MOVIES } from "../../gql";
 import Movie from "../../common/components/Movie";
+import Loading from "../../common/components/Loading";
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -13,25 +14,28 @@ const Movies = () => {
   const { loading, error, data } = useQuery(GET_MOVIES);
 
   React.useEffect(() => {
-    if (data && !loading && !error) {
+    if (data && !loading && !error && movies.length === 0) {
       // Dispatch action to update Redux store with the received data
       dispatch(setMovies(data.movies));
     }
-  }, [data, loading, error, dispatch]);
+  }, [data, loading, error, dispatch, movies]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <>
+        <Loading />
+      </>
+    );
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className='w-[90%] mx-auto'>
-      <div className='grid grid-cols-3 gap-4'>
-        {movies &&
-          movies.map((movie: MovieTypes) => (
-            <React.Fragment key={movie.episode_id}>
-              <Movie movie={movie} />
-            </React.Fragment>
-          ))}
-      </div>
+    <div className='w-[90%] mx-auto h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+      {movies &&
+        movies.map((movie: MovieTypes) => (
+          <React.Fragment key={movie.episode_id}>
+            <Movie movie={movie} />
+          </React.Fragment>
+        ))}
     </div>
   );
 };
