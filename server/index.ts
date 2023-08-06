@@ -1,9 +1,10 @@
 import {expressMiddleware} from "@apollo/server/express4"
 import "dotenv/config"
 import {ApolloServer} from "@apollo/server"
-import { typeDefs,resolvers } from './graphql'
+import { typeDefs } from "./src/graphql/typeDefs"
+import { resolvers } from "./src/graphql/resolvers"
 
-import app from "./app"
+import app from "./src/app"
 
 const bootstrapServer=async()=>{
   

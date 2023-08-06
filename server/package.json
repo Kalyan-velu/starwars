@@ -2,8 +2,8 @@
   "name": "server",
   "version": "1.0.0",
   "description": "GraphQL Server",
-  "main": "src/index.ts",
-  "type": "module",
+  "main": "index.ts",
+  "type": "commonjs",
   "scripts": {
     "dev": "nodemon",
     "build": "rm -rf ./build && tsc",
