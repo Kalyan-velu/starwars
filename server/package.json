@@ -8,6 +8,7 @@
     "build": "rm -rf ./build && tsc",
     "start": "node build/src/index.js",
     "pre-build": "yarn build && cd .. && cd client && yarn install && yarn build",
+    "pre-build-npm": "npm run build && cd .. && cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kalyan J. Borah",
