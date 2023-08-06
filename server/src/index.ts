@@ -1,7 +1,7 @@
 import {expressMiddleware} from "@apollo/server/express4"
 import "dotenv/config"
 import {ApolloServer} from "@apollo/server"
-import { typeDefs,resolvers } from './src/graphql'
+import { typeDefs,resolvers } from './graphql'
 
 import app from "./app"
 

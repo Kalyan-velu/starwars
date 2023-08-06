@@ -1,7 +1,7 @@
-import express,{ NextFunction, Request, Response }  from 'express'
+import express,{Express, NextFunction, Request, Response }  from 'express'
 import cors from 'cors'
 import path from 'path'
-const app = express();
+const app:Express = express();
 const __dirname1 = path.resolve()
 
 app.use(express.json({limit: '50mb'}));

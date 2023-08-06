@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "GraphQL Server",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "nodemon",
     "build": "rm -rf ./build && tsc",

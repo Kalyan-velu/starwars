@@ -1,7 +1,5 @@
-import { DocumentNode } from 'graphql'
-import {gql} from 'graphql-tag'
-
-export const typeDefs:DocumentNode=gql`
+import { gql } from 'graphql-tag';
+export const typeDefs = gql `
   type Movie{
     title:String!
     episode_id:Int
@@ -14,4 +12,4 @@ export const typeDefs:DocumentNode=gql`
     movie(id:Int!):Movie
     movies:[Movie]
   }
-`
+`;

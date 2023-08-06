@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "rootDir": "src",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "outDir": "build", // Types should go into this directory.
-    "declaration": true // Generate d.ts files
+    "declaration": true
   }
 }
